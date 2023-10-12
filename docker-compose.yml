@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+
+  api:
+    container_name: rest
+    build: .
+    ports:
+      - 80:80
+      - 443:443
+    # command: 'composer create-project --prefer-dist laravel/lumen api-b4psoft'
+    # networks:
+    #   default:
+    #     ipv4_address: 10.5.0.7
+
+    environment:
+      DOMAINS: 'ambiente de desenvolvimento -> dev.local.com.br'
+      STAGE: 'local'
+      FORCE_RENEW: 'false'
+    # volumes:
+    #   - .:/var/www/html:rw
+    #   - ./config_apache/conf/apache2.conf:/etc/apache2/apache2.conf
+      # - ./config_apache/sites:/etc/apache2/sites-available
+
+# networks:
+#   default:
+#     external:
+#       name: rede-interna
+  #external: true
